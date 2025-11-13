@@ -1,20 +1,14 @@
-// app/layout.tsx
-import Sidebar from './sideBar';
+// app/chat/page.tsx
+import Sidebar from './Sidebar';
+import ChatArea from './ChatArea';
 
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ChatPage() {
   return (
-    <html lang="en">
-      <body className="flex">
-        <Sidebar />
-        <main className="flex-1 p-6 bg-gray-100">
-          {children}
-        </main>
-      </body>
-    </html>
+    <div className="flex h-screen">
+      <Sidebar />
+      <main className="flex-1 p-4 bg-white overflow-hidden">
+        <ChatArea />
+      </main>
+    </div>
   );
 }
